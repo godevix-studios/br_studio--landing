@@ -14,7 +14,7 @@ export default function Footer() {
             onClick={scrollToTop}
             className="flex flex-1 items-center gap-3 group"
           >
-            <Logo className="w-32 h-auto" />
+            <Logo className="w-32 h-auto" paintOnHover hoverFill="#D4A853" />
           </button>
 
           <div className="flex-1 flex items-center justify-center gap-4">

@@ -44,7 +44,12 @@ export default function Navbar() {
             onClick={() => handleClick("#hero")}
             className="flex items-center gap-3"
           >
-            <Logo variant="short" className="w-16 h-auto"/>
+            <Logo
+              variant="short"
+              className="w-16 h-auto"
+              paintOnHover
+              hoverFill="#D4A853"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8">

@@ -30,7 +30,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex justify-center mb-6 max-sm:mb-3"
         >
-          <Logo className="max-sm:w-11/12"/>
+          <Logo className="max-sm:w-11/12" paintOnHover hoverFill="#D4A853" />
         </motion.div>
 
         <motion.div
