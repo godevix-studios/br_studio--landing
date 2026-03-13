@@ -1,8 +1,8 @@
 import AnimatedSection from "./AnimatedSection";
 import ParallaxImage from "./ParallaxImage";
 
-const ABOUT_IMAGE = "public/imgs/landing/about_1.webp";
-const PARALLAX_IMAGE = "public/imgs/landing/about_bg_interior.webp";
+const ABOUT_IMAGE = "imgs/landing/about_1.webp";
+const PARALLAX_IMAGE = "imgs/landing/about_bg_interior.webp";
 
 export default function AboutSection() {
   return (

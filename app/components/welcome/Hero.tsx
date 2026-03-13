@@ -4,7 +4,7 @@ import { LuChevronDown } from "react-icons/lu";
 import ParallaxImage from "./ParallaxImage";
 import Logo from "../ui/Logo";
 
-const HERO_IMAGE = "public/imgs/landing/hero_bg_interior.webp";
+const HERO_IMAGE = "imgs/landing/hero_bg_interior.webp";
 
 export default function HeroSection() {
   const scrollToServices = () => {

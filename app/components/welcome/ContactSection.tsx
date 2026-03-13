@@ -22,7 +22,7 @@ const CONTACT_INFO = [
   },
 ];
 
-const PARALLAX_IMAGE = 'public/imgs/landing/contact_bg_interior.webp';
+const PARALLAX_IMAGE = 'imgs/landing/contact_bg_interior.webp';
 
 export default function ContactSection() {
   return (
