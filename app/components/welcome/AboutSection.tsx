@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import ParallaxImage from "./ParallaxImage";
+import ImageWithSkeleton from "~/components/ui/ImageWithSkeleton";
 
 const ABOUT_IMAGE = "imgs/landing/about_1.webp";
 const PARALLAX_IMAGE = "imgs/landing/about_bg_interior.webp";
@@ -32,7 +33,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection variant="fadeLeft" className="hidden md:block">
               <div className="relative">
-                <img
+                <ImageWithSkeleton
                   src={ABOUT_IMAGE}
                   alt="Experiencia en Bigote Rojo Barbería"
                   className="lg:w-full rounded-xl shadow-2xl"

@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import ImageWithSkeleton from "~/components/ui/ImageWithSkeleton";
 
 interface TeamMember {
   name: string
@@ -41,10 +42,11 @@ function TeamCard({ member, index }: TeamCardProps) {
         className="group block text-center"
       >
         <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto mb-6 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-[#D4A853]/40 transition-all duration-700">
-          <img
+          <ImageWithSkeleton
             src={member.image}
             alt={member.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            skeletonClassName="rounded-full"
           />
           <div className="absolute inset-0 bg-[#C8102E]/0 group-hover:bg-[#C8102E]/20 transition-colors duration-500 rounded-full" />
         </div>
