@@ -20,8 +20,32 @@ export default function ParallaxImage({
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [offset, setOffset] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px), (pointer: coarse)");
+
+    const updateMobileState = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateMobileState();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateMobileState);
+      return () => mediaQuery.removeEventListener("change", updateMobileState);
+    }
+
+    mediaQuery.addListener(updateMobileState);
+    return () => mediaQuery.removeListener(updateMobileState);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setOffset(0);
+      return;
+    }
+
     const handleScroll = () => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
@@ -36,15 +60,20 @@ export default function ParallaxImage({
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [speed]);
+  }, [isMobile, speed]);
 
   return (
     <div ref={ref} className={cls("relative overflow-hidden", className)}>
       <img
         src={src}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover will-change-transform"
-        style={{ transform: `translateY(${offset}px) scale(1.2)` }}
+        className={cls(
+          "absolute inset-0 w-full h-full object-cover",
+          !isMobile && "will-change-transform",
+        )}
+        style={{
+          transform: isMobile ? "none" : `translateY(${offset}px) scale(1.2)`,
+        }}
       />
       {overlay && (
         <div className="absolute inset-0 bg-linear-to-b from-[#0A0A0A]/75 via-[#0A0A0A]/55 to-[#0A0A0A]/85" />

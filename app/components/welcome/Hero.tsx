@@ -13,7 +13,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative h-screen min-h-150">
+    <section id="hero" className="relative h-svh min-h-150">
       <ParallaxImage
         src={HERO_IMAGE}
         alt="Interior de Bigote Rojo Barbería"
@@ -23,14 +23,20 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-linear-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]/60" />
       </ParallaxImage>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20 pb-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex justify-center mb-6 max-sm:mb-3"
         >
-          <Logo className="max-sm:w-11/12" paintOnHover hoverFill="#D4A853" />
+          <Logo
+            className="w-[clamp(500px,50vw,650px)] h-auto max-h-[50svh] max-sm:max-h-[30svh]"
+            paintOnHover
+            hoverFill="#D4A853"
+            width={0}
+            height={0}
+          />
         </motion.div>
 
         <motion.div
