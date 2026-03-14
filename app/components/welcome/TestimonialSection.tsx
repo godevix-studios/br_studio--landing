@@ -31,13 +31,13 @@ export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrent((prev) => (prev + 1) % TESTIMONIALS.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []); */
+  }, []);
 
   const handlePrev = () => {
     setDirection(-1);
