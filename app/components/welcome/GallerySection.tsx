@@ -98,7 +98,7 @@ export default function GallerySection() {
                   <ImageWithSkeleton
                     src={image.url}
                     alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-[opacity_0.4s_ease,transform_0.7s_linear]"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute inset-0 flex items-center justify-center">

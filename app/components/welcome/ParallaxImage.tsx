@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import cls from "~/lib/cls";
-import ImageWithSkeleton from "~/components/ui/ImageWithSkeleton";
 
 interface ParallaxImageProps {
   src: string;
@@ -41,7 +40,7 @@ export default function ParallaxImage({
 
   return (
     <div ref={ref} className={cls("relative overflow-hidden", className)}>
-      <ImageWithSkeleton
+      <img
         src={src}
         alt={alt}
         className="absolute inset-0 w-full h-full object-cover will-change-transform"

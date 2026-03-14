@@ -31,8 +31,11 @@ export default function ImageWithSkeleton({
       <img
         src={src}
         alt={alt}
-        className={cls(className, !loaded ? "opacity-0" : "opacity-100")}
-        style={{ transition: "opacity 0.4s ease" }}
+        className={cls(
+          'transition-opacity duration-400 ease-in-out',
+          className,
+          !loaded ? "opacity-0" : "opacity-100"
+        )}
         onLoad={() => setLoaded(true)}
         {...props}
       />
